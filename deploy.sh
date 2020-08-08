@@ -17,6 +17,6 @@ git add -A
 git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io
-git push -f git@github.com:letamin/letamin.github.io.git master
+git push -f git@github.com:letamin/reddit-clone.git master:gh-pages
 
 cd -
