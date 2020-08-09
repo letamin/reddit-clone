@@ -5,7 +5,6 @@ const state = {
     isLoggedIn: false
 }
 
-const namespaced = true;
 const mutations = {
     setUser(state, user) {
         if (user) {
@@ -30,7 +29,7 @@ const actions = {
 }
 
 export default {
-    namespaced,
+    namespaced: true,
     state,
     actions,
     mutations

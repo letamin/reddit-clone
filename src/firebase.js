@@ -1,3 +1,5 @@
+//Configuration of firebase database
+
 import firebase from "firebase";
 
 const firebaseConfig = {
@@ -9,6 +11,7 @@ const firebaseConfig = {
     messagingSenderId: "1070996258073",
     appId: "1:1070996258073:web:3d54cf4cf2dfe25b385988"
 };
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 

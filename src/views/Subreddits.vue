@@ -1,14 +1,11 @@
 <template>
   <aside class="menu">
-    <p class="menu-label">
-      Menu
-    </p>
+    <p class="menu-label">Subreddits</p>
     <ul class="menu-list">
       <li v-for="subreddit in subreddits" :key="subreddit.id">
         <router-link
           :to="{ name: 'subreddit', params: { name: subreddit.name } }"
-          >{{ subreddit.name }}</router-link
-        >
+        >{{ subreddit.name }}</router-link>
       </li>
     </ul>
   </aside>
@@ -22,7 +19,7 @@ export default {
     this.init();
   },
   computed: mapState("subreddits", ["subreddits"]),
-  methods: mapActions("subreddits", ["init"]),
+  methods: mapActions("subreddits", ["init"])
 };
 </script>
 

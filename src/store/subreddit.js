@@ -13,8 +13,6 @@ const getters = {
     subreddit: (state) => state.subreddits[0] ? state.subreddits[0] : {}
 }
 
-const namespaced = true;
-
 const actions = {
     async createPost({ getters }, post) {
         const result = posts.doc()
@@ -25,6 +23,11 @@ const actions = {
         post.updated_at = firebase.firestore.FieldValue.serverTimestamp();
         await posts.doc(post.id).set(post);
     },
+    async deletePost(_, post_id) {
+        console.log(post_id)
+        await posts.doc(post_id).delete();
+    },
+
     initSubreddit: firestoreAction(function (context, name) {
         context.bindFirestoreRef('subreddits', db.collection('subreddits').where('name', '==', name))
     }),
@@ -34,7 +37,7 @@ const actions = {
 }
 
 export default {
-    namespaced,
+    namespaced: true,
     state,
     actions,
     getters
